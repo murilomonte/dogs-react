@@ -8,6 +8,7 @@ body {
     --type-first: Helvetica, Arial, sans-serif;
     --type-second: 'Spectral', Georgia, sans-serif;
     font-family: var(--type-first);
+    padding-top: 4rem;
 }
 
 h1, h2, h3, h4, p {
@@ -34,4 +35,9 @@ button, input {
 
 .container {
     max-width: 50rem;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
 }

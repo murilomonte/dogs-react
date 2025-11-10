@@ -9,7 +9,7 @@ import Login from "./Components/Login/Login";
 
 const App = () => {
   return (
-    <div>
+    <>
       <BrowserRouter>
         <Header />
         <Routes>
@@ -18,7 +18,7 @@ const App = () => {
         </Routes>
         <Footer />
       </BrowserRouter>
-    </div>
+    </>
   );
 };
 
