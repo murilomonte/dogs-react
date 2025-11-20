@@ -27,7 +27,6 @@ export const UserStorage = ({ children }) => {
       const { url, options } = TOKEN_POST({ username, password });
 
       const tokenRes = await fetch(url, options);
-      console.log(tokenRes);
       if (!tokenRes.ok) throw new Error(`Error: ${tokenRes.statusText}`);
       const { token } = await tokenRes.json();
       window.localStorage.setItem("token", token);
@@ -48,7 +47,6 @@ export const UserStorage = ({ children }) => {
     setLoading(false);
     setLogin(null);
     window.localStorage.removeItem("token");
-    navigate("/login");
   }
 
   React.useEffect(() => {
