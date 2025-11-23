@@ -6,9 +6,16 @@ import styles from "./PhotoComments.module.css";
 const PhotoComments = (props) => {
   const [comments, setComments] = React.useState(() => props.comments);
   const { login } = React.useContext(UserContext);
+  const commentSection = React.useRef(null);
+
+  React.useEffect(() => {
+    const sectionHeight = commentSection.current.scrollHeight;
+    commentSection.current.scrollTop = sectionHeight;
+  }, [comments]);
+
   return (
     <>
-      <ul className={styles.comments}>
+      <ul ref={commentSection} className={styles.comments}>
         {comments.map((comment) => {
           return (
             <li key={comment.comment_ID}>
@@ -18,7 +25,7 @@ const PhotoComments = (props) => {
           );
         })}
       </ul>
-      {login && <PhotoCommentsForm id={props.id} setComments={setComments}/>}
+      {login && <PhotoCommentsForm id={props.id} setComments={setComments} />}
     </>
   );
 };
