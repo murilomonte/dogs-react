@@ -18,7 +18,7 @@
 }
 
 /* grid-area: 1/1 indica que os dois conteudos estarao no mesmo lugar */
-.photo img {
+.photo > div {
   grid-area: 1/1;
 }
 
