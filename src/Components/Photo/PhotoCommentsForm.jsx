@@ -5,7 +5,7 @@ import useFetch from "../../Hooks/useFetch";
 import { COMMENT_POST } from "../../api";
 import Error from "../Helper/Error";
 
-const PhotoCommentsForm = ({ id, setComments }) => {
+const PhotoCommentsForm = ({single, id, setComments }) => {
   const [comment, setComment] = React.useState("");
   const { request, error } = useFetch();
 
@@ -22,7 +22,7 @@ const PhotoCommentsForm = ({ id, setComments }) => {
   }
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form className={`${styles.form} ${single ? styles.single : ''}`} onSubmit={handleSubmit}>
       {/* Deveria ter uma label, mas pra facilitar, coloca-se o placeholder */}
       <textarea
         className={styles.textarea}
