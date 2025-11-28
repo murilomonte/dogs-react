@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./User.module.css";
 import UserHeader from "./UserHeader";
 import { Route, Routes } from "react-router-dom";
 import Feed from "../Feed/Feed";
