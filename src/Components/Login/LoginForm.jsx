@@ -29,13 +29,13 @@ const LoginForm = () => {
         <h1 className="title">Login</h1>
         {/* Se desestrutura para ter acesso aos metodos e propriedades no componente  */}
         <Input label="Usuario" type="text" name="username" {...username} />
-        <Input label="Senha" type="password " name="password" {...password} />
+        <Input label="Senha" type="password" name="password" {...password} />
         {loading ? (
           <Button disabled>Carregando...</Button>
         ) : (
           <Button>Entrar</Button>
         )}
-        <Error error={error} />
+        <Error error={error && 'Dados incorretos.'} />
         {/* {error && <p>{error}</p>} */}
       </form>
       <Link className={styles.perdeu} to={"/login/perdeu"}>
